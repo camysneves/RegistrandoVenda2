@@ -3,47 +3,44 @@ package RegistrandoVendasFile;
 public class Main {
     public static void main(String[] args) {
 
-        Produto produto01 = new Produto(1,"Produto: Carro",  60000.00,30000.00,00,false);
-        Vendedor vendedor01 = new Vendedor("Vendedor(a) Izabela Dias",1,"João Pessoa");
-        Venda venda01 = new Venda();
+        Produto p1 = new Produto("2222", "Bolsa R", 150, 100, false);
+        Vendedor v1 = new Vendedor("Camylla", "4455", "Av.Aeroclube");
+        Venda ve1 = new Venda();
 
-        venda01.setProduto(produto01);
-        venda01.setVendedor(vendedor01);
-        venda01.setQuantidadeItem(2);
-        venda01.caucularValor();
-        venda01.caucularComissao();
-        System.out.println("Comissão do vendedor(a): " +venda01.getVendedor().getComissao() + "%");
-        venda01.imprimir();
-
-        System.out.println();
+        ve1.setProduto(p1);
+        ve1.setVendedor(v1);
+        ve1.setQtdItens(2);
+        ve1.calcularValor();
+        System.out.println("Valor da Comissão do Vendedor: R$" + ve1.calcularComissao());
+        ve1.imprimeVenda();
         System.out.println();
 
 
-        Produto produto02 = new Produto(2,"Produto02",50000.00,25000.00,true);
-        Vendedor vendedor02 = new Vendedor("Vendedor02",2,"JoaoPessoa");
-        Venda venda02 = new Venda();
-        venda02.setProduto(produto02);
-        venda02.setVendedor(vendedor02);
-        venda02.setQuantidadeItem(3);
-        venda02.setDesconto(10);
-        venda02.efetuarDesconto(venda02.getDesconto());
-        venda02.caucularValor();
-        System.out.println("Comissão de " + vendedor02.getNome() +"é: "+ venda02.getVendedor().getComissao() + "%");
-        venda02.imprimir();
+        Produto p2 = new Produto("1213", "Bolsa Santini", 100, 80, true);
+        Vendedor v2 = new Vendedor("Tatiana", "4444", "Av.João Pessoa");
+        Venda ve2 = new Venda();
 
+        ve2.setProduto(p2);
+        ve2.setVendedor(v2);
+        ve2.setQtdItens(3);
+        ve2.efetuarDesconto(10);
+        ve2.calcularValor();
+
+        System.out.println("Valor da Comissão do Vendedor: R$" + ve2.calcularComissao());
+        ve2.imprimeVenda();
         System.out.println();
-        System.out.println();
+
+        Venda ve3 = new Venda();
+        ve3.setProduto(p2);
+        ve3.setVendedor(v2);
+        ve3.setQtdItens(2);
+        ve3.efetuarDesconto(30);
 
 
-        Venda venda03 = new Venda();
-        venda03.setVendedor(vendedor02);
-        venda03.setProduto(produto02);
-        venda03.setQuantidadeItem(2);
-        venda03.setDesconto(30);
-        venda03.efetuarDesconto(venda03.getDesconto());
-        venda03.caucularValor();
-        System.out.println("Comissão do(a) " + vendedor02.getNome() +" é: "+ venda03.getVendedor().getComissao());
-        venda03.imprimir();
+        ve3.calcularValor();
+        System.out.println("Valor da Comissão do Vendedor: R$" + ve3.calcularComissao());
+        //O Valor do Produto vai ficar de 90 reais por conta do desconto aplocado na linha 43!!
+        ve3.imprimeVenda();
+
     }
-
 }

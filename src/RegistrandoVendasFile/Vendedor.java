@@ -2,14 +2,12 @@ package RegistrandoVendasFile;
 
 public class Vendedor {
     private String nome;
-    private int codigo;
-    private double comissao = 5;
-    private String endereco;
+    private final int codigo;
+    private final double comissao = 5;
 
-    public Vendedor(String nome, int codigo, String endereco) {
+    public Vendedor(String nome, String codigo, String endereco) {
         this.nome = nome;
-        this.codigo = codigo;
-        this.endereco = endereco;
+        this.codigo = Integer.parseInt(codigo);
     }
 
     public String getNome() {
@@ -24,24 +22,8 @@ public class Vendedor {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
     public double getComissao() {
-        return comissao;
+        return 0;
     }
-
-    public void setComissao(double comissao) {
-        this.comissao = comissao;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
-    }
-
 }
+

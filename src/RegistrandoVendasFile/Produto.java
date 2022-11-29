@@ -1,13 +1,13 @@
 package RegistrandoVendasFile;
 
 public class Produto {
-    private int codigo;
+    private String codigo;
     private String descricao;
     private double valorVenda;
     private double valorCusto;
     private boolean promocao;
 
-    public Produto(int codigo, String descricao, double valorVenda, double valorCusto, boolean promocao) {
+    public Produto(String codigo, String descricao, double valorVenda, double valorCusto, boolean promocao) {
         this.codigo = codigo;
         this.descricao = descricao;
         this.valorVenda = valorVenda;
@@ -15,11 +15,11 @@ public class Produto {
         this.promocao = promocao;
     }
 
-    public int getCodigo() {
+    public String getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
 
@@ -54,5 +54,4 @@ public class Produto {
     public void setPromocao(boolean promocao) {
         this.promocao = promocao;
     }
-
 }
